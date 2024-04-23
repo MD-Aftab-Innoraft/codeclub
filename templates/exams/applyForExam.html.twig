@@ -1,0 +1,23 @@
+{% extends 'basenav.html.twig' %}
+
+{% block title %}
+  Apply Exam - {{examDetails.title}}
+{% endblock %}
+
+{% block body %}
+  <div class="form-container">
+{{ form_start(examUserMapping) }}
+
+{{ form_widget(examUserMapping.userId , {'attr': {'style': 'display: none;'}, 'value': app.user.id }) }}
+
+
+{{ form_widget(examUserMapping.examId , {'attr': {'style': 'display: none;'}, 'value': examDetails.id }) }}
+
+<h1>Exam Title: {{examDetails.title}}</h1>
+<button type="submit" class="btn btn-success">Confirm Application</button>
+
+
+{{ form_end(examUserMapping) }}
+
+  </div>
+{% endblock %}

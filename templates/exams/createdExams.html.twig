@@ -1,0 +1,36 @@
+{% extends 'baseAdminNav.html.twig' %}
+
+{% block title %}
+	Upcoming Exams
+{% endblock %}
+
+{% block body %}
+
+{% if createdExams is empty %}
+
+		<h2 class="mb-16 text-center">You haven't created any exam.</h2>
+    <p class="font-20 mb-8 text-center">Create an exam <a href="/create-exam">here</a></p>
+	{% else %}
+
+		<h1 class="text-center">Your created Exams:</h1>
+    <p class="font-20 mb-16">Create <a href="create-exam">another exam</a></p>
+		{% for exam in createdExams %}
+			<div class="exam-details">
+				<h2 class="mb-8">Exam Id:
+					{{exam.id}}</h2>
+				<p class="mb-8">Title:
+					{{exam.Title}}</p>
+				<p class="mb-8">Start time:{{ exam.StartTime|date('Y-m-d H:i:s') }}</p>
+				<p class="mb-8">End Time:
+					{{exam.EndTime|date('Y-m-d H:i:s') }}</p>
+				<p class="mb-8">Duration:
+					{{exam.Duration}}</p>
+				<p class="mb-8">Total Marks:{{exam.TotalMarks}}</p>
+				<p class="mb-8">No. of Questions:
+					{{exam.NoOfQuestions}}</p>
+				<button class="mb-16 font-16" id="examApplyBtn">Edit Exam</button>
+			</div>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+

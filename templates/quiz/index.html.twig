@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1 class="text-center mb-16">Take the Quiz</h1>
+	<form action="{{ path('submit_quiz') }}" method="POST">
+		{% for question in questions %}
+			<div class="question">
+<p class="font-20">
+	<strong>{{ loop.index}}. {{ question.Question }}</strong>
+</p>
+
+					<label class="font-17">
+						<input class="m-4" type="radio" name="answers[{{ question.id }}]" value="{{ question.A }}">{{ question.A }}
+        	</label><br>
+
+<label class="font-17">
+
+<input class="m-4" type="radio" name="answers[{{ question.id }}]" value="{{ question.B }}">{{ question.B }}
+
+
+					</label><br>
+
+<label class="font-17">
+
+<input class="m-4" type="radio" name="answers[{{ question.id }}]" value="{{ question.C }}">{{ question.C }}
+
+
+					</label><br>
+
+<label class="font-17">
+
+<input class="m-4" type="radio" name="answers[{{ question.id }}]" value="{{ question.D }}">{{ question.D }}
+
+
+					</label><br>
+
+			</div>
+		{% endfor %}
+		<button type="submit">Submit Answers</button>
+	</form>
+{% endblock %}
+

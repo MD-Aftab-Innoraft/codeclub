@@ -1,0 +1,51 @@
+
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+{% endblock %}
+
+{% block body %}
+  <div class="sidebar">
+    <h1 class="text-center mb-8">Hello,
+      {% if profile.Fullname is not defined %}
+        User
+      {% else %}
+      {{ profile.Fullname|split(' ')[0]  }}
+      {% endif %}
+    </h1>
+
+    <a class="dashboard-links" href="/user-profile">Show Profile</a>
+    <a class="dashboard-links" href="/edit-profile">Edit Profile</a>
+    <a class="dashboard-links" href="/upcoming-exams">Upcoming Exams</a>
+    <a class="dashboard-links" href="/applied-exams">Applied Exams</a>
+
+    <button id="logoutBtn">
+      <a class="dashboard-links" href="/logout">Logout</a>
+    </button>
+
+  </div>
+  <div class="main-content dashboard-parent">
+      <div class="box dashboard-child">
+        <p class="dashboard-box-heading font-25 mb-16">Profile</p>
+        <p class="dashboard-box-links font-20 mb-8">Go to your <a href="/user-profile">Profile</a></p>
+        <p class="dashboard-box-links font-20 mb-8">Edit your <a href="/edit-profile">Profile</a></p>
+      </div>
+      <div class="box dashboard-child">
+        <p class="dashboard-box-heading font-25 mb-16">Exams</p>
+        <p class="dashboard-box-links font-20 mb-8">See list of <a href="upcoming-exams">upcoming exams</a></p>
+        <p class="dashboard-box-links font-20 mb-8">See list of <a href="applied-exams">applied exams</a></p>
+      </div>
+      <div class="box dashboard-child">
+        <p class="dashboard-box-heading font-25 mb-16">Results</p>
+        <p class="dashboard-box-links font-20 mb-8">See Your <a href="/see-results">results</a></p>
+        <p class="dashboard-box-links font-20 mb-8">See Your <a href="/see-results">results</a></p>
+      </div>
+      <div class="box dashboard-child">
+        <p class="dashboard-box-heading font-25 mb-16">Extra</p>
+        <p class="dashboard-box-links font-20 mb-8">See list of <a href="#">Add Content</a></p>
+        <p class="dashboard-box-links font-20 mb-8">See list of <a href="#">Add Content</a></p>
+      </div>
+  </div>
+
+{% endblock %}

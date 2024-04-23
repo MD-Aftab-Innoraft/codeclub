@@ -1,0 +1,22 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Listed Questions
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">List of Questions:</h1>
+    {% for question in questions %}
+      <h2>Question id: {{question.id}}</h2>
+      <p class="font-16 mb-8">Question Statement: {{question.Question}}</p>
+
+    <ul class="question-list">
+      <li class="question-option my-4">A.{{question.A}}</li>
+      <li class="question-option my-4">B.{{question.B}}</li>
+      <li class="question-option my-4">C.{{question.C}}</li>
+      <li class="question-option mb-8">D.{{question.D}}</li>
+    </ul>
+      <p class="text-bold mb-16">Correct Answer: {{question.correct}}</p>
+    {% endfor %}
+{% endblock %}

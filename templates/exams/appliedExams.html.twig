@@ -1,0 +1,45 @@
+{% extends 'basenav.html.twig' %}
+
+{% block title %}
+	Applied Exams
+{% endblock %}
+
+{% block body %}
+
+	{% if appliedExams is empty %}
+		<h2 class="mb-16">You haven't applied for any exam</h2>
+    <p class="font-20">Apply for <a href="/upcoming-exams">Exams</a></p>
+	{% else %}
+
+		<h1 class="text-center">Upcoming Exams:</h1>
+      {% for exam in appliedExams %}
+
+			<div class="exam-details">
+				<h2 class="mb-8">Exam Id:
+{{exam.examId.id}}</h2>
+
+				<p class="mb-8">Title:
+{{exam.examId.Title}}</p>
+
+				<p class="mb-8">Start time:{{ exam.examId.StartTime|date('Y-m-d H:i:s') }}</p>
+				<p class="mb-8">End Time:
+{{exam.examId.EndTime|date('Y-m-d H:i:s') }}</p>
+
+				<p class="mb-8">Duration:
+{{exam.examId.Duration}}</p>
+
+<p class="mb-8">Total Marks:{{exam.examId.TotalMarks}}</p>
+
+				<p class="mb-8">No. of Questions:
+{{exam.examId.NoOfQuestions}}</p>
+
+				<button class="mb-16 font-16" id="examApplyBtn">
+<a class="no-deco col-white" href="{{path('app_begin-exam',{'examId':exam.examId.id})}}">Start Exam</a>
+				</button>
+
+			</div>
+
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+

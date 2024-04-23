@@ -1,0 +1,32 @@
+{% extends 'baseAdminNav.html.twig' %}
+
+{% block title %}
+  Add Question
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center">Add a Question:</h1>
+
+	{{ form_start(questionForm) }}
+    {{ form_row(questionForm.Question, {'label': 'Question Statement','label_attr': {'class': 'font-25'}}) }}
+
+    {{ form_row(questionForm.A, {'label': 'Option A','label_attr': {'class': 'font-20'}}) }}
+
+    {{ form_row(questionForm.B, {'label': 'Option B','label_attr': {'class': 'font-20'}}) }}
+
+    {{ form_row(questionForm.C, {'label': 'Option C','label_attr': {'class': 'font-20'}}) }}
+
+    {{ form_row(questionForm.D, {'label': 'Option D','label_attr': {'class': 'font-20'}}) }}
+
+    {{ form_row(questionForm.correct, {'label': 'Correct Answer','label_attr': {'class': 'font-20'}}) }}
+
+    {{ form_row(questionForm.marks, {'label': 'Marks','label_attr': {'class': 'font-20'}}) }}
+
+	  <button type="submit" class="btn btn-success">Add Question</button>
+	{{ form_end(questionForm) }}
+
+	<p style="margin-left: 100px;" class="font-25">Go back to
+		<a href="/dashboard">Dashboard</a>
+	</p>
+{% endblock %}
+

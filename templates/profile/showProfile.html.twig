@@ -1,0 +1,76 @@
+{% extends 'basenav.html.twig' %}
+
+{% block title %}
+	User Profile
+{% endblock %}
+
+{% block body %}
+{% if profile.Fullname is not defined %}
+
+<h1 class="text-center">User profile isn't created, 😟</h1>
+<p class="font-18">Create one
+	<a  href="/create-profile">here.😀</a>
+</p>
+
+{% else %}
+
+  <h1 class="text-center mb-8">Hello,
+    {{ profile.Fullname|split(' ')[0] }}
+  </h1>
+
+	<p class="font-20 mb-8">Username:
+<strong>
+	{{ profile.Fullname }}</strong>
+
+  </p>
+
+	<p class="font-20 mb-8">Email:
+<strong>{{ profile.email }}</strong>
+
+
+	</p>
+
+	<p class="font-20 mb-8">Age:
+<strong>{{ profile.Age }}</strong>
+
+
+	</p>
+
+	<p class="font-20 mb-8">Phone:
+<strong>{{ profile.phone }}
+</strong>
+
+
+	</p>
+
+	<p class="font-20 mb-8">X'th Standard Marks:
+<strong>
+{{ profile.Xmarks }}</strong>
+
+
+	</p>
+
+	<p class="font-20 mb-8">XII'th Standard Marks:
+<strong>{{ profile.XIImarks }}
+</strong>
+
+
+	</p>
+
+<p class="font-20 mb-8">Resume:
+<strong>{{ profile.resume ?? 'N.A.' }}
+	</strong></p>
+
+</p>
+
+
+<p class="font-20 mb-8">
+	<strong>Data outdated? </strong>
+		<a href="edit-profile">Update Profile</a>
+	</p>
+</p>
+
+
+{% endif %}
+
+{% endblock %}

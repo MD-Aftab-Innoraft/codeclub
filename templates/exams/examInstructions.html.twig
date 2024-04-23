@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Exam Rules
+{% endblock %}
+
+{% block body %}
+<div class="exam-container">
+	<h1 class="text-center mb-16">Exam Instructions</h1>
+	<div class="exam-details">
+		<p>
+			<strong>Start Time:</strong>
+			{{ examDetails.StartTime | date('d-m-Y H:i a') }}</p>
+		<p>
+			<strong>End Time:</strong>
+{{ examDetails.EndTime | date('d-m-Y H:i a') }}</p>
+
+		<p><strong>Duration: </strong>{{ examDetails.Duration }} hours</p>
+		<p><strong>Number of questions: </strong>{{ examDetails.NoOfQuestions }}</p>
+		<p class="mb-8"><strong>Total Marks: </strong>{{ examDetails.TotalMarks }}</p>
+
+	</div>
+	<div class="instructions">
+		<h2 class="my-8">Instructions:</h2>
+<ul class="instruction-list">
+			<li>Ensure you have a stable internet connection throughout the exam.</li>
+			<li>Do not close the browser window until you submit your final answers.</li>
+			<li>Make sure you have prepared all the necessary materials before starting.</li>
+		</ul>
+	</div>
+<button id="takeMeToExamBtn"><a class="no-deco col-white" href="/quiz">Take me to exam</button>
+
+</div>
+
+{% endblock %}

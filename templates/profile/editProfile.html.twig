@@ -1,0 +1,36 @@
+
+{% extends 'basenav.html.twig' %}
+
+{% block body %}
+    <h1 class="text-center">Edit Your Profile</h1>
+
+    {{ form_start(profileForm) }}
+    {{ form_row(profileForm.Fullname) }}
+
+{{ form_row(profileForm.email, {
+    'attr': {
+        'readonly': 'readonly',
+        'style': 'cursor: not-allowed;',
+        'value': app.user.email
+    }
+}) }}
+
+{{ form_row(profileForm.phone ) }}
+
+{{ form_row(profileForm.Age) }}
+
+{{ form_row(profileForm.DOB) }}
+
+{{ form_row(profileForm.Xmarks) }}
+
+{{ form_widget(profileForm.user , {'attr': {'style': 'display: none;'}, 'value': app.user.id }) }}
+
+
+{{ form_row(profileForm.XIImarks) }}
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    {{ form_end(profileForm) }}
+
+<p style="margin-left: 100px;">Go back to <a href="/dashboard">Dashboard</a></p>
+{% endblock %}

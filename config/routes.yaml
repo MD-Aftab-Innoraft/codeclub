@@ -3,3 +3,30 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+# config/routes.yaml
+
+# Dashboard Route
+# app_dashboard:
+#     path: /dashboard
+#     controller: App\Controller\DashboardController::showDashboard
+
+# # Login Route
+# app_login:
+#     path: /login
+#     controller: App\Controller\SecurityController::login
+
+# # Logout Route
+# app_logout:
+#     path: /logout
+#     controller: App\Controller\SecurityController::logout
+
+# # Register Route
+# app_register:
+#     path: /register
+#     controller: App\Controller\RegistrationController::register
+
+# # Admin Route
+# app_admin:
+#     path: /admin
+#     controller: App\Controller
+

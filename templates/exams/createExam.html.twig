@@ -1,0 +1,37 @@
+{% extends "baseAdminNav.html.twig" %}
+
+{% block title %}
+  Create Exam
+{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Create an Exam:</h1>
+
+  {{ form_start(createExam) }}
+{{ form_row(createExam.Title, {'label_attr': {'class': 'font-20 mr-8'}}) }}
+
+<div class="mb-8">
+  {{ form_row(createExam.StartTime, {'label_attr': {'class': 'font-20 mr-8'}}) }}
+</div>
+
+<div class="mb-8">
+  {{ form_row(createExam.EndTime, {'label_attr': {'class': 'font-20 mr-8'}}) }}
+</div>
+
+{{ form_row(createExam.Duration, {'label_attr': {'class': 'font-20'}}) }}
+
+
+{{ form_row(createExam.TotalMarks, {'label_attr': {'class': 'font-20'}}) }}
+
+
+{{ form_row(createExam.NoOfQuestions, {'label_attr': {'class': 'font-20'}}) }}
+
+
+    {{ form_widget(createExam.userid , {'attr': {'style': 'display: none;'}, 'value': app.user.id }) }}
+
+    <button type="submit" class="btn btn-success">Create Exam</button>
+
+    {{ form_end(createExam) }}
+
+  <p class="font-20" style="margin-left:100px;">Go back to <a href="/dashboard">Dashboard</a></p>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1 class="text-center mb-16">Quiz Results</h1>
+	<p class="font-20 mb-16">You answered
+    <strong class="font-25">{{ correctCount }}</strong>
+        questions correctly out of
+    <strong class="font-25">{{ totalQuestions }}</strong>
+<p class="font-25 mb-16">Percentage obtained:
+	<strong>
+		{{ percentObtained }}
+		%</strong>
+</p>
+
+    <p class="font-20 mb-8">Attempt <a href="/upcoming-exams">other exams</a></p>
+    <p class="font-20 mb-8">Go back to <a href="/dashboard"> Dashboard</a></p>
+{% endblock %}

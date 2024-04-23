@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1 class="text-center">Create Your Profile</h1>
+
+	{{ form_start(profileForm) }}
+	{{ form_row(profileForm.Fullname) }}
+
+	{{ form_row(profileForm.email, {'attr': {'class': 'form-control'}}) }}
+
+	{{ form_row(profileForm.phone , {'attr': {'class': 'form-control'}}) }}
+
+	{{ form_row(profileForm.Age , {'attr': {'class': 'form-control'}}) }}
+
+	{{ form_row(profileForm.DOB , {'attr': {'class': 'form-control'}}) }}
+
+	{{ form_row(profileForm.Xmarks , {'attr': {'class': 'form-control'}}) }}
+
+	{{ form_widget(profileForm.user , {'attr': {'style': 'display: none;'}, 'value': app.user.id }) }}
+
+
+	{{ form_row(profileForm.XIImarks, {'attr': {'class': 'form-control'}}) }}
+
+
+	<button type="submit" class="btn btn-success">Submit</button>
+	{{ form_end(profileForm) }}
+{% endblock %}
+
